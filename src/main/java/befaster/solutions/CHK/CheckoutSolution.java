@@ -127,13 +127,12 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("FFF"));
         System.out.println(checkoutSolution.checkout("FFFF"));
-        System.out.println(checkoutSolution.checkout("FFFFFF"));
     }
 
 //{"method":"checkout","params":["FFF"],"id":"CHK_R3_040"}, expected: 20, got: -10
 //{"method":"checkout","params":["FFFF"],"id":"CHK_R3_041"}, expected: 30, got: -20
 //{"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_042"}, expected: 40, got: -30
 }
+
 
