@@ -111,7 +111,7 @@ public class CheckoutSolution {
 
         int valFTotal = 0;
         if(numberF >= 3) {
-            int discountedF = numberF / 2;
+            int discountedF = numberF / 3;
             valFTotal = numberF * 10;
 
             valFTotal = valFTotal - discountedF * 10;
@@ -134,5 +134,6 @@ public class CheckoutSolution {
 //{"method":"checkout","params":["FFFF"],"id":"CHK_R3_041"}, expected: 30, got: -20
 //{"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_042"}, expected: 40, got: -30
 }
+
 
 
