@@ -5,11 +5,11 @@ public class CheckoutSolution {
 
         int result = 0;
 
-        if(skus == null) {
+        if (skus == null) {
             return -1;
         }
 
-        if(skus.isEmpty()) {
+        if (skus.isEmpty()) {
             return result;
         }
 
@@ -22,27 +22,27 @@ public class CheckoutSolution {
         int numberD = 0;
         int valD = 15;
 
-        for(int i = 0; i < skus.length(); i++) {
+        for (int i = 0; i < skus.length(); i++) {
 
             char c = skus.charAt(i);
 
-            if(Character.isLowerCase(c)) {
+            if (Character.isLowerCase(c)) {
                 result = -1;
                 System.out.println("Lower case");
                 break;
             }
 
             switch (c) {
-                case 'A' :
+                case 'A':
                     numberA++;
                     break;
-                case 'B' :
+                case 'B':
                     numberB++;
                     break;
-                case 'C' :
+                case 'C':
                     numberC++;
                     break;
-                case 'D' :
+                case 'D':
                     numberD++;
                     break;
                 default:
@@ -51,7 +51,7 @@ public class CheckoutSolution {
             }
         }
 
-        if(result == -1) {
+        if (result == -1) {
             return result;
         }
 
@@ -81,11 +81,12 @@ public class CheckoutSolution {
         return result;
     }
 
-    public static void main(String[] args) {
-        CheckoutSolution checkoutSolution = new CheckoutSolution();
-        checkoutSolution.checkout("AAA");
-    }
+//    public static void main(String[] args) {
+//        CheckoutSolution checkoutSolution = new CheckoutSolution();
+//        checkoutSolution.checkout("AAA");
+//    }
 }
+
 
 
 
