@@ -15,12 +15,18 @@ public class CheckoutSolution {
 
         int numberA = 0;
         int valA = 50;
+
         int numberB = 0;
         int valB = 30;
+
         int numberC = 0;
         int valC = 20;
+
         int numberD = 0;
         int valD = 15;
+
+        int numberE = 0;
+        int valE = 40;
 
         for (int i = 0; i < skus.length(); i++) {
 
@@ -45,6 +51,9 @@ public class CheckoutSolution {
                 case 'D':
                     numberD++;
                     break;
+                case 'E':
+                    numberD++;
+                    break;
                 default:
                     result = -1;
                     break;
@@ -64,19 +73,33 @@ public class CheckoutSolution {
         int valCTotal = valC * numberC;
         int valDTotal = valD * numberD;
 
-        int discountedA = numberA / 3; // Normalize
-        int notDiscountedA = numberA - discountedA * 3; // Rest
-        int valADiscounted = discountedA * 130;
-        int valANotDiscounted = notDiscountedA * 50;
-        int valATotal = valADiscounted + valANotDiscounted;
+        // A :: 5
+        int discountedAby5 = numberA / 5; // Normalize
+        int valADiscountedBy5 = discountedAby5 * 200;
 
+        int notDiscountedAby5 = numberA - discountedAby5 * 5;
+        // A :: 3
+        int discountedAby3 = numberA - notDiscountedAby5;
+        discountedAby3 = discountedAby3 / 3;
+        int valADiscountedBy3 = discountedAby3 * 3;
+        // A :: Rest
+        int notDiscountedA = numberA - discountedAby3 - discountedAby5;
+        int valATotal = valADiscountedBy5 + valADiscountedBy3 + notDiscountedA * 50;
+
+        // E
+        int discountedBbyE = numberE / 2;
+        int valETotal = numberE * 40;
+
+        // B
+        numberB = numberB - discountedBbyE;
         int discountedB = numberB / 2; // Normalize
         int notDiscountedB = numberB - discountedB * 2; // Rest
         int valBDiscounted = discountedB * 45;
         int valBNotDiscounted = notDiscountedB * 30;
         int valBTotal = valBDiscounted + valBNotDiscounted;
 
-        result = valATotal + valBTotal + valCTotal + valDTotal;
+        result = valATotal + valBTotal + valCTotal + valDTotal + valETotal;
+
 
         return result;
     }
@@ -86,3 +109,4 @@ public class CheckoutSolution {
 //        checkoutSolution.checkout("AAA");
 //    }
 }
+
