@@ -173,7 +173,7 @@ public class CheckoutSolution {
             valUTotal = numberU * 40;
             valUTotal = valUTotal - discountedU * 40;
         } else {
-            valUTotal = numberU * 10;
+            valUTotal = numberU * 40;
         }
 
         result =
@@ -236,7 +236,8 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("U"));
+        System.out.println(checkoutSolution.checkout("V"));
     }
 }
+
 
