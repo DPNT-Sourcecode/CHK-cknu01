@@ -213,7 +213,7 @@ public class CheckoutSolution {
         // FIRST
         int discountedByFirst          = original / first; // Normalize
         int valDiscountedByFirst       = discountedByFirst * firstValue;
-        int notDiscountedByFirst       = original - discountedByFirst * firstValue;
+        int notDiscountedByFirst       = original - discountedByFirst * first;
         // SECOND
         int discountedBySecond         = notDiscountedByFirst / second;
         int valDiscountedBySecond      = discountedBySecond * secondValue;
@@ -240,5 +240,6 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("HHHHHHHHHHH"));
     }
 }
+
 
 
