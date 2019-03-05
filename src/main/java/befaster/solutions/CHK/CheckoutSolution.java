@@ -5,9 +5,9 @@ public class CheckoutSolution {
 
         int result = 0;
 
-//        if(skus == null) {
-//            return -1;
-//        }
+        if(skus == null) {
+            return -1;
+        }
 
         if(skus.isEmpty()) {
             return result;
@@ -24,7 +24,7 @@ public class CheckoutSolution {
 
         for(int i = 0; i < skus.length(); i++) {
 
-            char c = skus.charAt(0);
+            char c = skus.charAt(i);
 
             if(Character.isLowerCase(c)) {
                 result = -1;
@@ -80,6 +80,12 @@ public class CheckoutSolution {
 
         return result;
     }
+
+    public static void main(String[] args) {
+        CheckoutSolution checkoutSolution = new CheckoutSolution();
+        checkoutSolution.checkout("ABCa");
+    }
 }
+
 
 
