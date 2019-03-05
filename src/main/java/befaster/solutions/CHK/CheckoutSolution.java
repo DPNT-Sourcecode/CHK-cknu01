@@ -49,35 +49,34 @@ public class CheckoutSolution {
                     result = -1;
                     break;
             }
-
-            if(result == -1) {
-                break;
-            } else {
-                System.out.println(numberA);
-                System.out.println(numberB);
-                System.out.println(numberC);
-                System.out.println(numberD);
-
-                // C, D are easy since they don't get discounted
-                int valCTotal = valC * numberC;
-                int valDTotal = valD * numberD;
-
-                int discountedA = numberA / 3; // Normalize
-                int notDiscountedA = numberA - discountedA; // Rest
-                int valADiscounted = (discountedA / 3) * 130;
-                int valANotDiscounted = notDiscountedA * 50;
-                int valATotal = valADiscounted + valANotDiscounted;
-
-                int discountedB = numberB / 2; // Normalize
-                int notDiscountedB = numberB - discountedB; // Rest
-                int valBDiscounted = (discountedB / 2) * 45;
-                int valBNotDiscounted = notDiscountedB * 30;
-                int valBTotal = valBDiscounted + valBNotDiscounted;
-
-                result = valATotal + valBTotal + valCTotal + valDTotal;
-
-            }
         }
+
+        if(result == -1) {
+            return result;
+        }
+
+        System.out.println(numberA);
+        System.out.println(numberB);
+        System.out.println(numberC);
+        System.out.println(numberD);
+
+        // C, D are easy since they don't get discounted
+        int valCTotal = valC * numberC;
+        int valDTotal = valD * numberD;
+
+        int discountedA = numberA / 3; // Normalize
+        int notDiscountedA = numberA - discountedA * 3; // Rest
+        int valADiscounted = discountedA * 130;
+        int valANotDiscounted = notDiscountedA * 50;
+        int valATotal = valADiscounted + valANotDiscounted;
+
+        int discountedB = numberB / 2; // Normalize
+        int notDiscountedB = numberB - discountedB * 2; // Rest
+        int valBDiscounted = discountedB * 45;
+        int valBNotDiscounted = notDiscountedB * 30;
+        int valBTotal = valBDiscounted + valBNotDiscounted;
+
+        result = valATotal + valBTotal + valCTotal + valDTotal;
 
         return result;
     }
@@ -87,6 +86,7 @@ public class CheckoutSolution {
         checkoutSolution.checkout("AAA");
     }
 }
+
 
 
 
