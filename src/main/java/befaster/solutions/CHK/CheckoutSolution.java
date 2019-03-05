@@ -126,7 +126,7 @@ public class CheckoutSolution {
         }
 
         // F
-        int valFTotal;
+        int valFTotal = 0;
         if(numberF >= 3) {
             int discountedF = numberF / 3;
             valFTotal = numberF * 10;
@@ -169,20 +169,39 @@ public class CheckoutSolution {
 
         // F
         if(numberU >= 4) {
-            int discountedU= numberF / 4;
-            valFTotal = numberF * 40;
-            valFTotal = valFTotal - discountedU * 40;
+            int discountedU= numberU / 4;
+            valUTotal = numberU * 40;
+            valUTotal = valUTotal - discountedU * 40;
         } else {
-            valFTotal = numberF * 10;
+            valUTotal = numberU * 10;
         }
 
         result =
                 valATotal +
-                valBTotal +
-                valCTotal +
-                valDTotal +
-                valETotal +
-                valFTotal ;
+                        valBTotal +
+                        valCTotal +
+                        valDTotal +
+                        valETotal +
+                        valFTotal +
+                        valGTotal +
+                        valHTotal +
+                        valITotal +
+                        valJTotal +
+                        valKTotal +
+                        valLTotal +
+                        valMTotal +
+                        valNTotal +
+                        valOTotal +
+                        valPTotal +
+                        valQTotal +
+                        valRTotal +
+                        valSTotal +
+                        valTTotal +
+                        valUTotal +
+                        valVTotal +
+                        valWTotal +
+                        valXTotal +
+                        valZTotal;
 
         return result;
     }
