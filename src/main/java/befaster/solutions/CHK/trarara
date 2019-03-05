@@ -1,0 +1,15 @@
+
+ ✓ SUM (1 round)  -   warmup - completed in 22 min (+0 min penalty)
+ ✓    └── SUM_R1  - completed in 22 min (+0 min penalty)
+
+ ✓ HLO (2 rounds) -   warmup - completed in 7 min (+20 min penalty)
+ ✓    ├── HLO_R1  - completed in 5 min (+20 min penalty)
+ ✓    └── HLO_R2  - completed in 1 min (+0 min penalty)
+
+ @ CHK (5 rounds) - official - Supermarket checkout
+ ✓    ├── CHK_R1  - completed in 41 min (+40 min penalty)
+ ✓    ├── CHK_R2  - completed in 29 min (+20 min penalty)
+ ✓    ├── CHK_R3  - completed in 23 min (+20 min penalty)
+ >    ├── CHK_R4  - running for 70 min (+30 min penalty)
+
+ 22 + 7 + 41 + 29 + 23 + 70
