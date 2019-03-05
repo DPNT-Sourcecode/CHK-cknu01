@@ -1,5 +1,7 @@
 package befaster.solutions.CHK;
 
+import org.apache.commons.codec.binary.StringUtils;
+
 public class CheckoutSolution {
     public Integer checkout(String skus) {
 
@@ -14,10 +16,8 @@ public class CheckoutSolution {
         }
 
         int numberA = 0;
-        int valA = 50;
 
         int numberB = 0;
-        int valB = 30;
 
         int numberC = 0;
         int valC = 20;
@@ -26,10 +26,30 @@ public class CheckoutSolution {
         int valD = 15;
 
         int numberE = 0;
-        int valE = 40;
 
         int numberF = 0;
-        int valF = 10;
+
+        int numberG = 0;
+        int numberH = 0;
+        int numberI = 0;
+        int numberJ = 0;
+        int numberK = 0;
+        int numberL = 0;
+        int numberM = 0;
+        int numberN = 0;
+        int numberO = 0;
+        int numberP = 0;
+        int numberQ = 0;
+        int numberR = 0;
+        int numberS = 0;
+        int numberT = 0;
+        int numberU = 0;
+        int numberV = 0;
+        int numberW = 0;
+        int numberX = 0;
+        int numberY = 0;
+        int numberZ = 0;
+
 
         for (int i = 0; i < skus.length(); i++) {
 
@@ -66,16 +86,12 @@ public class CheckoutSolution {
             }
         }
 
+        // PRELIM
         if (result == -1) {
             return result;
         }
 
-        System.out.println(numberA);
-        System.out.println(numberB);
-        System.out.println(numberC);
-        System.out.println(numberD);
-        System.out.println(numberE);
-        System.out.println(numberF);
+        Strin
 
         // C, D are easy since they don't get discounted
         int valCTotal = valC * numberC;
@@ -129,11 +145,8 @@ public class CheckoutSolution {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
         System.out.println(checkoutSolution.checkout("FFFF"));
     }
-
-//{"method":"checkout","params":["FFF"],"id":"CHK_R3_040"}, expected: 20, got: -10
-//{"method":"checkout","params":["FFFF"],"id":"CHK_R3_041"}, expected: 30, got: -20
-//{"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_042"}, expected: 40, got: -30
 }
+
 
 
 
