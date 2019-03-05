@@ -90,13 +90,15 @@ public class CheckoutSolution {
         int valETotal = numberE * 40;
 
         // B
-        numberB = numberB - discountedBbyE;
-        int discountedB = numberB / 2; // Normalize
-        int notDiscountedB = numberB - discountedB * 2; // Rest
-        int valBDiscounted = discountedB * 45;
-        int valBNotDiscounted = notDiscountedB * 30;
-        int valBTotal = valBDiscounted + valBNotDiscounted;
-
+        int valBTotal = 0;
+        if(numberB != 0) {
+            numberB = numberB - discountedBbyE;
+            int discountedB = numberB / 2; // Normalize
+            int notDiscountedB = numberB - discountedB * 2; // Rest
+            int valBDiscounted = discountedB * 45;
+            int valBNotDiscounted = notDiscountedB * 30;
+            valBTotal = valBDiscounted + valBNotDiscounted;
+        }
         result = valATotal + valBTotal + valCTotal + valDTotal + valETotal;
 
 
@@ -105,7 +107,8 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        checkoutSolution.checkout("EE");
+        checkoutSolution.checkout("EEEBB");
     }
 }
+
 
