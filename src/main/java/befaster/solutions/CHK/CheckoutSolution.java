@@ -8,12 +8,12 @@ public class CheckoutSolution {
         int result = 0;
 
         // Check 1
-        if (skus == null) {
+        if (skus == null || skus.equals("-")) {
             return -1;
         }
 
         // Check 2
-        if (skus.isEmpty() || skus.equals("-")) {
+        if (skus.isEmpty()) {
             return 0;
         }
 
@@ -240,6 +240,7 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("HHHHHHHHHHH"));
     }
 }
+
 
 
 
