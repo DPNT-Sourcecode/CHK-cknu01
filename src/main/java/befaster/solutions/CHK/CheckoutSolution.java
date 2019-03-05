@@ -5,7 +5,11 @@ public class CheckoutSolution {
 
         int result = 0;
 
-        if(skus == null || skus.isEmpty()) {
+        if(skus == null) {
+            return -1;
+        }
+
+        if(skus.isEmpty()) {
             return -1;
         }
 
@@ -19,7 +23,13 @@ public class CheckoutSolution {
         int valD = 15;
 
         for(int i = 0; i < skus.length(); i++) {
+
             char c = skus.charAt(0);
+
+            if(Character.isLowerCase(c)) {
+                result = -1;
+                break;
+            }
 
             switch (c) {
                 case 'A' :
@@ -71,3 +81,4 @@ public class CheckoutSolution {
         return result;
     }
 }
+
