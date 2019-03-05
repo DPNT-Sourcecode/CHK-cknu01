@@ -7,8 +7,9 @@ public class HelloSolution {
             throw new RuntimeException("Invalid");
         }
 
-        return "Hello, World";
+        return "Hello, World!";
     }
 }
+
 
 
