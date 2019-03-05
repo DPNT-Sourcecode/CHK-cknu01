@@ -105,6 +105,7 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        checkoutSolution.checkout("AAA");
+        checkoutSolution.checkout("EE");
     }
 }
+
