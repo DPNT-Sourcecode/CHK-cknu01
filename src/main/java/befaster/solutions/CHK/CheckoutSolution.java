@@ -5,12 +5,12 @@ public class CheckoutSolution {
 
         int result = 0;
 
-        if(skus == null) {
-            return -1;
-        }
+//        if(skus == null) {
+//            return -1;
+//        }
 
         if(skus.isEmpty()) {
-            return -1;
+            return result;
         }
 
         int numberA = 0;
@@ -81,4 +81,5 @@ public class CheckoutSolution {
         return result;
     }
 }
+
 
