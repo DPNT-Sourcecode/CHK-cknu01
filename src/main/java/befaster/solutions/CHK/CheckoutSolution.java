@@ -79,8 +79,7 @@ public class CheckoutSolution {
 
         int notDiscountedAby5 = numberA - discountedAby5 * 5;
         // A :: 3
-        int discountedAby3 = numberA - notDiscountedAby5;
-        discountedAby3 = discountedAby3 / 3;
+        int discountedAby3 = notDiscountedAby5 / 3;
         int valADiscountedBy3 = discountedAby3 * 3;
         // A :: Rest
         int notDiscountedA = numberA - discountedAby3 - discountedAby5;
@@ -109,5 +108,6 @@ public class CheckoutSolution {
         checkoutSolution.checkout("AAA");
     }
 }
+
 
 
