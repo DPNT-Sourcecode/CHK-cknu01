@@ -29,7 +29,7 @@ public class CheckoutSolution {
         int valE = 40;
 
         int numberF = 0;
-        int valF = 40;
+        int valF = 10;
 
         for (int i = 0; i < skus.length(); i++) {
 
@@ -112,7 +112,7 @@ public class CheckoutSolution {
         int valFTotal = 0;
         if(numberF >= 3) {
             int discountedF = numberF / 2;
-            valFTotal = valFTotal * 10;
+            valFTotal = numberF * 10;
 
             valFTotal = valFTotal - discountedF * 10;
 
@@ -127,6 +127,13 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        checkoutSolution.checkout("EEEBB");
+        System.out.println(checkoutSolution.checkout("FFF"));
+        System.out.println(checkoutSolution.checkout("FFFF"));
+        System.out.println(checkoutSolution.checkout("FFFFFF"));
     }
+
+//{"method":"checkout","params":["FFF"],"id":"CHK_R3_040"}, expected: 20, got: -10
+//{"method":"checkout","params":["FFFF"],"id":"CHK_R3_041"}, expected: 30, got: -20
+//{"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_042"}, expected: 40, got: -30
 }
+
