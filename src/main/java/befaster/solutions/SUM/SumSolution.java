@@ -8,11 +8,12 @@ public class SumSolution {
 
         // check for x < 0 && x > 100
         if (x < 0 && x > 100) {
-            throw new IllegalArgmentException()
+            throw new IllegalArgmentException();
         }
 
         throw new SolutionNotImplementedException();
     }
 
 }
+
 
