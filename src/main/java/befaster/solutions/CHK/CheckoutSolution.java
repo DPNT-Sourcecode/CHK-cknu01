@@ -130,6 +130,3 @@ public class CheckoutSolution {
         checkoutSolution.checkout("EEEBB");
     }
 }
-
-
-
