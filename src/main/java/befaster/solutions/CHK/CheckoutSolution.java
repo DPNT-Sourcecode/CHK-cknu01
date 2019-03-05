@@ -13,7 +13,7 @@ public class CheckoutSolution {
         }
 
         // Check 2
-        if (skus.isEmpty()) {
+        if (skus.isEmpty() || skus.equals("-")) {
             return 0;
         }
 
@@ -240,6 +240,7 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("HHHHHHHHHHH"));
     }
 }
+
 
 
 
