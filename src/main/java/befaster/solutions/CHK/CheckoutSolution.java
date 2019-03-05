@@ -151,7 +151,10 @@ public class CheckoutSolution {
         valRTotal = numberR * 50;
 
         // Q - same as B1
-        valQTotal = sameAsB1(numberQ, 3, 30, 80);
+        if(numberQ != 0) {
+            numberQ = numberQ - discountedQbyR;
+            valQTotal = sameAsB1(numberQ, 3, 30, 80);
+        }
 
         // N
         int discountedMbyN = numberN / 3;
@@ -163,6 +166,16 @@ public class CheckoutSolution {
             numberM = numberM - discountedMbyN;
             valMTotal = numberM * valM;
         }
+
+        // F
+        if(numberU >= 4) {
+            int discountedU= numberF / 4;
+            valFTotal = numberF * 40;
+            valFTotal = valFTotal - discountedU * 40;
+        } else {
+            valFTotal = numberF * 10;
+        }
+
         result =
                 valATotal +
                 valBTotal +
