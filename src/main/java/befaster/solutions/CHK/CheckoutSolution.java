@@ -143,7 +143,7 @@ public class CheckoutSolution {
         valVTotal = sameAsA(numberV, 50, 3, 130, 2, 90);
 
         // K - same as B1
-        valKTotal = sameAsB1(numberV, 2, 80, 150);
+        valKTotal = sameAsB1(numberK, 2, 80, 150);
         // P - same as B1
         valPTotal = sameAsB1(numberP, 5, 50, 200);
 
@@ -236,6 +236,7 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("FFFF"));
+        System.out.println(checkoutSolution.checkout("U"));
     }
 }
+
