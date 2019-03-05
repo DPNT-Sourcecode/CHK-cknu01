@@ -84,9 +84,10 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        checkoutSolution.checkout("ABCa");
+        checkoutSolution.checkout("AAA");
     }
 }
+
 
 
 
