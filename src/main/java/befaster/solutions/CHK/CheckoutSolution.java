@@ -1,6 +1,6 @@
 package befaster.solutions.CHK;
 
-import org.apache.commons.codec.binary.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
@@ -12,77 +12,13 @@ public class CheckoutSolution {
         }
 
         if (skus.isEmpty()) {
-            return result;
+            return 0;
         }
 
-        int numberA = 0;
-
-        int numberB = 0;
-
-        int numberC = 0;
-        int valC = 20;
-
-        int numberD = 0;
-        int valD = 15;
-
-        int numberE = 0;
-
-        int numberF = 0;
-
-        int numberG = 0;
-        int numberH = 0;
-        int numberI = 0;
-        int numberJ = 0;
-        int numberK = 0;
-        int numberL = 0;
-        int numberM = 0;
-        int numberN = 0;
-        int numberO = 0;
-        int numberP = 0;
-        int numberQ = 0;
-        int numberR = 0;
-        int numberS = 0;
-        int numberT = 0;
-        int numberU = 0;
-        int numberV = 0;
-        int numberW = 0;
-        int numberX = 0;
-        int numberY = 0;
-        int numberZ = 0;
-
-
         for (int i = 0; i < skus.length(); i++) {
-
-            char c = skus.charAt(i);
-
-            if (Character.isLowerCase(c)) {
+            if (Character.isLowerCase(skus.charAt(i))) {
                 result = -1;
-                System.out.println("Lower case");
                 break;
-            }
-
-            switch (c) {
-                case 'A':
-                    numberA++;
-                    break;
-                case 'B':
-                    numberB++;
-                    break;
-                case 'C':
-                    numberC++;
-                    break;
-                case 'D':
-                    numberD++;
-                    break;
-                case 'E':
-                    numberE++;
-                    break;
-                case 'F':
-                    numberF++;
-                    break;
-                default:
-                    result = -1;
-                    break;
             }
         }
 
@@ -91,7 +27,36 @@ public class CheckoutSolution {
             return result;
         }
 
-        Strin
+        int valC = 20;
+        int valD = 15;
+
+        int numberA = StringUtils.countMatches(skus, 'A');
+        int numberB = StringUtils.countMatches(skus, 'B');
+        int numberC = StringUtils.countMatches(skus, 'C');
+        int numberD = StringUtils.countMatches(skus, 'D');
+        int numberE = StringUtils.countMatches(skus, 'E');
+        int numberF = StringUtils.countMatches(skus, 'F');
+        int numberG = StringUtils.countMatches(skus, 'G');
+        int numberH = StringUtils.countMatches(skus, 'H');
+        int numberI = StringUtils.countMatches(skus, 'I');
+        int numberJ = StringUtils.countMatches(skus, 'J');
+        int numberK = StringUtils.countMatches(skus, 'K');
+        int numberL = StringUtils.countMatches(skus, 'L');
+        int numberM = StringUtils.countMatches(skus, 'M');
+        int numberN = StringUtils.countMatches(skus, 'N');
+        int numberO = StringUtils.countMatches(skus, 'O');
+        int numberP = StringUtils.countMatches(skus, 'P');
+        int numberQ = StringUtils.countMatches(skus, 'Q');
+        int numberR = StringUtils.countMatches(skus, 'R');
+        int numberS = StringUtils.countMatches(skus, 'S');
+        int numberT = StringUtils.countMatches(skus, 'T');
+        int numberU = StringUtils.countMatches(skus, 'U');
+        int numberV = StringUtils.countMatches(skus, 'V');
+        int numberW = StringUtils.countMatches(skus, 'W');
+        int numberX = StringUtils.countMatches(skus, 'X');
+        int numberY = StringUtils.countMatches(skus, 'Y');
+        int numberZ = StringUtils.countMatches(skus, 'Z');
+        
 
         // C, D are easy since they don't get discounted
         int valCTotal = valC * numberC;
@@ -146,7 +111,3 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("FFFF"));
     }
 }
-
-
-
-
