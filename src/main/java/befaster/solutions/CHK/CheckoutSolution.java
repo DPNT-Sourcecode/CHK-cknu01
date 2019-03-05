@@ -52,7 +52,7 @@ public class CheckoutSolution {
                     numberD++;
                     break;
                 case 'E':
-                    numberD++;
+                    numberE++;
                     break;
                 default:
                     result = -1;
@@ -104,9 +104,10 @@ public class CheckoutSolution {
         return result;
     }
 
-//    public static void main(String[] args) {
-//        CheckoutSolution checkoutSolution = new CheckoutSolution();
-//        checkoutSolution.checkout("AAA");
-//    }
+    public static void main(String[] args) {
+        CheckoutSolution checkoutSolution = new CheckoutSolution();
+        checkoutSolution.checkout("AAA");
+    }
 }
+
 
