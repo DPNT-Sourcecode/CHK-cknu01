@@ -147,7 +147,7 @@ public class CheckoutSolution {
         // P - same as B1
         valPTotal = sameAsB1(numberP, 5, 50, 200);
 
-        int discountedQbyR = numberQ / 3;
+        int discountedQbyR = numberR / 3;
         valRTotal = numberR * 50;
 
         // Q - same as B1
@@ -237,6 +237,7 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("HHHHH"));
+        System.out.println(checkoutSolution.checkout("RRRQ"));
     }
 }
+
