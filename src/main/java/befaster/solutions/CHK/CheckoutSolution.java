@@ -219,8 +219,8 @@ public class CheckoutSolution {
         int valDiscountedBySecond      = discountedBySecond * secondValue;
         // REST
         int notDiscounted               = original -
-                discountedBySecond * secondValue -
-                discountedByFirst * firstValue;
+                discountedBySecond * second -
+                discountedByFirst * first;
 
         return valDiscountedByFirst + valDiscountedBySecond + notDiscounted * originalValue;
     }
@@ -237,6 +237,6 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("V"));
+        System.out.println(checkoutSolution.checkout("HHHHH"));
     }
 }
