@@ -28,6 +28,7 @@ public class CheckoutSolution {
 
             if(Character.isLowerCase(c)) {
                 result = -1;
+                System.out.println("Lower case");
                 break;
             }
 
@@ -86,6 +87,7 @@ public class CheckoutSolution {
         checkoutSolution.checkout("ABCa");
     }
 }
+
 
 
 
