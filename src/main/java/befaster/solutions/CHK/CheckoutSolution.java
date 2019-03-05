@@ -7,14 +7,17 @@ public class CheckoutSolution {
 
         int result = 0;
 
+        // Check 1
         if (skus == null) {
             return -1;
         }
 
+        // Check 2
         if (skus.isEmpty()) {
             return 0;
         }
 
+        // Sanity 1
         for (int i = 0; i < skus.length(); i++) {
             if (Character.isLowerCase(skus.charAt(i))) {
                 result = -1;
@@ -22,13 +25,25 @@ public class CheckoutSolution {
             }
         }
 
-        // PRELIM
+        // Sanity 2
         if (result == -1) {
             return result;
         }
 
         int valC = 20;
         int valD = 15;
+        int valG = 20;
+        int valI = 35;
+        int valJ = 60;
+        int valL = 90;
+        int valM = 15;
+        int valO = 10;
+        int valS = 30;
+        int valT = 20;
+        int valW = 20;
+        int valX = 90;
+        int valY = 10;
+        int valZ = 50;
 
         int numberA = StringUtils.countMatches(skus, 'A');
         int numberB = StringUtils.countMatches(skus, 'B');
@@ -56,16 +71,37 @@ public class CheckoutSolution {
         int numberX = StringUtils.countMatches(skus, 'X');
         int numberY = StringUtils.countMatches(skus, 'Y');
         int numberZ = StringUtils.countMatches(skus, 'Z');
-        
 
-        // C, D are easy since they don't get discounted
+
+        // Simple rules
         int valCTotal = valC * numberC;
         int valDTotal = valD * numberD;
+        int valGTotal = valG * numberG;
+        int valITotal = valI * numberI;
+        int valJTotal = valJ * numberJ;
+        int valLTotal = valL * numberL;
+
+        int valOTotal = valO * numberO;
+        int valSTotal = valS * numberS;
+        int valTTotal = valT * numberT;
+        int valWTotal = valW * numberW;
+        int valXTotal = valX * numberX;
+        int valYTotal = valY * numberY;
+        int valZTotal = valZ * numberZ;
+
+        // Meh rules
+        int valHTotal = 0;
+        int valKTotal = 0;
+        int valNTotal = 0;
+        int valPTotal = 0;
+        int valQTotal = 0;
+        int valRTotal = 0;
+        int valUTotal = 0;
+        int valVTotal = 0;
 
         // A :: 5
         int discountedAby5 = numberA / 5; // Normalize
         int valADiscountedBy5 = discountedAby5 * 200;
-
         int notDiscountedAby5 = numberA - discountedAby5 * 5;
         // A :: 3
         int discountedAby3 = notDiscountedAby5 / 3;
@@ -89,8 +125,8 @@ public class CheckoutSolution {
             valBTotal = valBDiscounted + valBNotDiscounted;
         }
 
-
-        int valFTotal = 0;
+        // F
+        int valFTotal;
         if(numberF >= 3) {
             int discountedF = numberF / 3;
             valFTotal = numberF * 10;
@@ -101,9 +137,69 @@ public class CheckoutSolution {
             valFTotal = numberF * 10;
         }
 
-        result = valATotal + valBTotal + valCTotal + valDTotal + valETotal + valFTotal;
+        // H - Same as A
+        valHTotal = sameAsA(numberH, 10, 10, 80, 5, 45);
+        // V - same as A
+        valVTotal = sameAsA(numberV, 50, 3, 130, 2, 90);
+
+        // K - same as B1
+        valKTotal = sameAsB1(numberV, 2, 80, 150);
+        // P - same as B1
+        valPTotal = sameAsB1(numberP, 5, 50, 200);
+
+        int discountedQbyR = numberQ / 3;
+        valRTotal = numberR * 50;
+
+        // Q - same as B1
+        valQTotal = sameAsB1(numberQ, 3, 30, 80);
+
+        // N
+        int discountedMbyN = numberN / 3;
+        valNTotal = numberN * 40;
+
+        // M
+        int valMTotal = 0;
+        if(numberM != 0) {
+            numberM = numberM - discountedMbyN;
+            valMTotal = numberM * valM;
+        }
+        result =
+                valATotal +
+                valBTotal +
+                valCTotal +
+                valDTotal +
+                valETotal +
+                valFTotal ;
 
         return result;
+    }
+
+    public int sameAsA(int original, int originalValue,
+                        int first, int firstValue,
+                        int second, int secondValue) {
+        // FIRST
+        int discountedByFirst          = original / first; // Normalize
+        int valDiscountedByFirst       = discountedByFirst * firstValue;
+        int notDiscountedByFirst       = original - discountedByFirst * 5;
+        // SECOND
+        int discountedBySecond         = notDiscountedByFirst / second;
+        int valDiscountedBySecond      = discountedBySecond * secondValue;
+        // REST
+        int notDiscounted               = original -
+                discountedBySecond * secondValue -
+                discountedByFirst * firstValue;
+
+        return valDiscountedByFirst + valDiscountedBySecond + notDiscounted * originalValue;
+    }
+
+    public int sameAsB1(int original, int quota, int originalValue, int discount){
+
+        int discounted          = original / quota; // Normalize
+        int notDiscounted      = original - discounted * quota; // Rest
+        int valDiscounted      = discounted * discount;
+        int valNotDiscounted   = notDiscounted * originalValue;
+
+        return valDiscounted + valNotDiscounted;
     }
 
     public static void main(String[] args) {

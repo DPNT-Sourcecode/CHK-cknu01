@@ -1,0 +1,33 @@
+int valC = 20;
+int valD = 15;
+int valG = 20;
+int valI = 35;
+int valJ = 60;
+int valL = 90;
+int valM = 15;
+int valO = 10;
+int valS = 30;
+int valT = 20;
+int valW = 20;
+int valX = 90;
+int valY = 10;
+int valZ = 50;
+
+
+H
+K
+N
+P
+Q
+R
+U
+V
+
+int valHTotal = 0;
+int valKTotal = 0;
+int valNTotal = 0;
+int valPTotal = 0;
+int valQTotal = 0;
+int valRTotal = 0;
+int valUTotal = 0;
+int valVTotal = 0;
