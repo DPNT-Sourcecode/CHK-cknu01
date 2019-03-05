@@ -28,6 +28,9 @@ public class CheckoutSolution {
         int numberE = 0;
         int valE = 40;
 
+        int numberF = 0;
+        int valF = 40;
+
         for (int i = 0; i < skus.length(); i++) {
 
             char c = skus.charAt(i);
@@ -54,6 +57,9 @@ public class CheckoutSolution {
                 case 'E':
                     numberE++;
                     break;
+                case 'F':
+                    numberF++;
+                    break;
                 default:
                     result = -1;
                     break;
@@ -68,6 +74,8 @@ public class CheckoutSolution {
         System.out.println(numberB);
         System.out.println(numberC);
         System.out.println(numberD);
+        System.out.println(numberE);
+        System.out.println(numberF);
 
         // C, D are easy since they don't get discounted
         int valCTotal = valC * numberC;
@@ -99,8 +107,20 @@ public class CheckoutSolution {
             int valBNotDiscounted = notDiscountedB * 30;
             valBTotal = valBDiscounted + valBNotDiscounted;
         }
-        result = valATotal + valBTotal + valCTotal + valDTotal + valETotal;
 
+
+        int valFTotal = 0;
+        if(numberF >= 3) {
+            int discountedF = numberF / 2;
+            valFTotal = valFTotal * 10;
+
+            valFTotal = valFTotal - discountedF * 10;
+
+        } else {
+            valFTotal = numberF * 10;
+        }
+
+        result = valATotal + valBTotal + valCTotal + valDTotal + valETotal + valFTotal;
 
         return result;
     }
@@ -110,5 +130,6 @@ public class CheckoutSolution {
         checkoutSolution.checkout("EEEBB");
     }
 }
+
 
 
