@@ -116,7 +116,7 @@ public class CheckoutSolution {
 
         // B
         int valBTotal = 0;
-        if(numberB != 0) {
+        if(numberB != 0 ) {
             numberB = numberB - discountedBbyE;
             int discountedB = numberB / 2; // Normalize
             int notDiscountedB = numberB - discountedB * 2; // Rest
@@ -201,6 +201,7 @@ public class CheckoutSolution {
                         valVTotal +
                         valWTotal +
                         valXTotal +
+                        valYTotal +
                         valZTotal;
 
         return result;
@@ -239,5 +240,3 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("V"));
     }
 }
-
-
