@@ -7,9 +7,6 @@ public class HelloSolution {
             throw new RuntimeException("Invalid");
         }
 
-        return "Hello, World!";
+        return String.format("Hello, %s!", friendName);
     }
 }
-
-
-
