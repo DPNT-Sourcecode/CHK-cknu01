@@ -84,32 +84,12 @@ public class CheckoutSolution {
         int valLTotal = valL * numberL;
 
         int valOTotal = valO * numberO;
+        int valSTotal = valS * numberS;
+        int valTTotal = valT * numberT;
         int valWTotal = valW * numberW;
-
-        // Z > Y, S, T > X (last to be taken into account)
-        // There might be a formula for this
-        // Equivalent of adding up all and dividing by three
-
-        int discountedX = numberX / 3;
-        int remainingX = numberX - discountedX * 3;
-
-        int discountedZ = numberZ / 3;
-        int remainingZ = numberZ - discountedZ * 3;
-
-        int discountYST = (numberS + numberY + numberT) / 3;
-        int remainingYST = (numberS + numberY + numberT) - discountYST * 3;
-
-        int discountedGroup = (discountYST + discountedX + discountedZ) * 45;
-        int remainingGroup = remainingYST + remainingX + remainingZ;
-        int discountedRemaining = remainingGroup / 3;
-        int finalRemaining = remainingGroup - discountedRemaining * 3;
-
-        int sumTotalGroup;
-        if(remainingYST + remainingX + remainingZ < 3 && remainingYST + remainingX + remainingZ > 0) {
-            sumTotalGroup = remainingYST * 20 + remainingZ * 21 + remainingX * 17;
-        } else {
-            sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
-        }
+        int valXTotal = valX * numberX;
+        int valYTotal = valY * numberY;
+        int valZTotal = valZ * numberZ;
 
         // Meh rules
         int valHTotal = 0;
@@ -217,10 +197,14 @@ public class CheckoutSolution {
                         valPTotal +
                         valQTotal +
                         valRTotal +
+                        valSTotal +
+                        valTTotal +
                         valUTotal +
                         valVTotal +
                         valWTotal +
-                        sumTotalGroup;
+                        valXTotal +
+                        valYTotal +
+                        valZTotal;
 
         return result;
     }
@@ -255,6 +239,6 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("SSSZ"));
+        System.out.println(checkoutSolution.checkout("HHHHHHHHHHH"));
     }
 }
