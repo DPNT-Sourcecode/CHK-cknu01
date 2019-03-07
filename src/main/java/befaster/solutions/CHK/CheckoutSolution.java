@@ -89,24 +89,27 @@ public class CheckoutSolution {
         // Z > Y, S, T > X (last to be taken into account)
         // There might be a formula for this
         // Equivalent of adding up all and dividing by three
-        int discountedS = numberS / 3;
-        int remainingS = numberS - discountedS * 3;
-        int discountedT = numberT / 3;
-        int remainingT = numberT - discountedT * 3;
+
         int discountedX = numberX / 3;
         int remainingX = numberX - discountedX * 3;
-        int discountedY = numberY / 3;
-        int remainingY = numberY - discountedY * 3;
+
         int discountedZ = numberZ / 3;
         int remainingZ = numberZ - discountedZ * 3;
 
-        int discountedGroup = (discountedS + discountedT + discountedX + discountedY + discountedZ) * 45;
-        int remainingGroup = remainingS + remainingT + remainingX + remainingY + remainingZ;
+        int discountYST = (numberS + numberY + numberT) / 3;
+        int remainingYST = (numberS + numberY + numberT) - discountYST * 3;
+
+        int discountedGroup = (discountYST + discountedX + discountedZ) * 45;
+        int remainingGroup = remainingYST + remainingX + remainingZ;
         int discountedRemaining = remainingGroup / 3;
         int finalRemaining = remainingGroup - discountedRemaining * 3;
 
-        int sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
-
+        int sumTotalGroup;
+        if(remainingYST + remainingX + remainingZ < 3) {
+            sumTotalGroup = remainingYST * 20 + remainingZ * 21 + remainingX * 17;
+        } else {
+            sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
+        }
 
         // Meh rules
         int valHTotal = 0;
@@ -252,6 +255,7 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("SS"));
+        System.out.println(checkoutSolution.checkout("SSSXZ"));
     }
 }
+
