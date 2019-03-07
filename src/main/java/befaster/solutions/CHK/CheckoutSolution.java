@@ -105,7 +105,7 @@ public class CheckoutSolution {
         int finalRemaining = remainingGroup - discountedRemaining * 3;
 
         int sumTotalGroup;
-        if(remainingYST + remainingX + remainingZ < 3) {
+        if(remainingYST + remainingX + remainingZ < 3 && remainingYST + remainingX + remainingZ > 0) {
             sumTotalGroup = remainingYST * 20 + remainingZ * 21 + remainingX * 17;
         } else {
             sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
@@ -258,5 +258,6 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("SSS"));
     }
 }
+
 
 
