@@ -63,11 +63,13 @@ public class CheckoutSolution {
         int numberP = StringUtils.countMatches(skus, 'P');
         int numberQ = StringUtils.countMatches(skus, 'Q');
         int numberR = StringUtils.countMatches(skus, 'R');
-        int numberS = StringUtils.countMatches(skus, 'S');
-        int numberT = StringUtils.countMatches(skus, 'T');
+
         int numberU = StringUtils.countMatches(skus, 'U');
         int numberV = StringUtils.countMatches(skus, 'V');
         int numberW = StringUtils.countMatches(skus, 'W');
+
+        int numberS = StringUtils.countMatches(skus, 'S');
+        int numberT = StringUtils.countMatches(skus, 'T');
         int numberX = StringUtils.countMatches(skus, 'X');
         int numberY = StringUtils.countMatches(skus, 'Y');
         int numberZ = StringUtils.countMatches(skus, 'Z');
@@ -143,7 +145,7 @@ public class CheckoutSolution {
         valVTotal = sameAsA(numberV, 50, 3, 130, 2, 90);
 
         // K - same as B1
-        valKTotal = sameAsB1(numberK, 2, 80, 150);
+        valKTotal = sameAsB1(numberK, 2, 70, 120);
         // P - same as B1
         valPTotal = sameAsB1(numberP, 5, 50, 200);
 
@@ -167,7 +169,7 @@ public class CheckoutSolution {
             valMTotal = numberM * valM;
         }
 
-        // F
+        // U
         if(numberU >= 4) {
             int discountedU= numberU / 4;
             valUTotal = numberU * 40;
