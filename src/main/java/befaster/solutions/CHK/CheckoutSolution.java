@@ -91,13 +91,13 @@ public class CheckoutSolution {
         int discountedS = numberS / 3;
         int remainingS = numberS - discountedS * 3;
         int discountedT = numberT / 3;
-        int remainingT = numberT - discountedS * 3;
+        int remainingT = numberT - discountedT * 3;
         int discountedX = numberX / 3;
-        int remainingX = numberX - discountedS * 3;
+        int remainingX = numberX - discountedX * 3;
         int discountedY = numberY / 3;
-        int remainingY = numberY - discountedS * 3;
+        int remainingY = numberY - discountedY * 3;
         int discountedZ = numberZ / 3;
-        int remainingZ = numberZ - discountedS * 3;
+        int remainingZ = numberZ - discountedZ * 3;
 
         int discountedGroup = (discountedS + discountedT + discountedX + discountedY + discountedZ) * 45;
         int remainingGroup = remainingS + remainingT + remainingX + remainingY + remainingZ;
@@ -105,8 +105,6 @@ public class CheckoutSolution {
         int finalRemaining = remainingGroup - discountedRemaining * 3;
 
         int sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
-
-
 
 
         // Meh rules
@@ -253,7 +251,8 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("HHHHHHHHHHH"));
+        System.out.println(checkoutSolution.checkout("SSS"));
     }
 }
+
 
