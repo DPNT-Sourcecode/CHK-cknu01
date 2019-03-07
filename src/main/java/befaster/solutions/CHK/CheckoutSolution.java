@@ -255,6 +255,3 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("SS"));
     }
 }
-
-
-
