@@ -88,6 +88,7 @@ public class CheckoutSolution {
 
         // Z > Y, S, T > X (last to be taken into account)
         // There might be a formula for this
+        // Equivalent of adding up all and dividing by three
         int discountedS = numberS / 3;
         int remainingS = numberS - discountedS * 3;
         int discountedT = numberT / 3;
@@ -251,8 +252,9 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("SSS"));
+        System.out.println(checkoutSolution.checkout("SS"));
     }
 }
+
 
 
