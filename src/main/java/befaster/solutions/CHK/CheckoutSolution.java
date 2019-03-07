@@ -84,12 +84,30 @@ public class CheckoutSolution {
         int valLTotal = valL * numberL;
 
         int valOTotal = valO * numberO;
-        int valSTotal = valS * numberS;
-        int valTTotal = valT * numberT;
         int valWTotal = valW * numberW;
-        int valXTotal = valX * numberX;
-        int valYTotal = valY * numberY;
-        int valZTotal = valZ * numberZ;
+
+        // Z > Y, S, T > X (last to be taken into account)
+        // There might be a formula for this
+        int discountedS = numberS / 3;
+        int remainingS = numberS - discountedS * 3;
+        int discountedT = numberT / 3;
+        int remainingT = numberT - discountedS * 3;
+        int discountedX = numberX / 3;
+        int remainingX = numberX - discountedS * 3;
+        int discountedY = numberY / 3;
+        int remainingY = numberY - discountedS * 3;
+        int discountedZ = numberZ / 3;
+        int remainingZ = numberZ - discountedS * 3;
+
+        int discountedGroup = (discountedS + discountedT + discountedX + discountedY + discountedZ) * 45;
+        int remainingGroup = remainingS + remainingT + remainingX + remainingY + remainingZ;
+        int discountedRemaining = remainingGroup / 3;
+        int finalRemaining = remainingGroup - discountedRemaining * 3;
+
+        int sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
+
+
+
 
         // Meh rules
         int valHTotal = 0;
@@ -197,14 +215,10 @@ public class CheckoutSolution {
                         valPTotal +
                         valQTotal +
                         valRTotal +
-                        valSTotal +
-                        valTTotal +
                         valUTotal +
                         valVTotal +
                         valWTotal +
-                        valXTotal +
-                        valYTotal +
-                        valZTotal;
+                        sumTotalGroup;
 
         return result;
     }
@@ -242,3 +256,4 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("HHHHHHHHHHH"));
     }
 }
+
