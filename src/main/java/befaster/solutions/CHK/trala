@@ -8,6 +8,36 @@ id = CHK_R5_148, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRS
 id = CHK_R5_149, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHKKVVVBBNNNMFFFQQQVVHHHHHSTX"), resp = 1655
 id = CHK_R5_001, req = checkout("CXYZYZC"), resp = 119
 
+
+50
+30
+20
+15
+40
+10
+20
+10
+35
+60
+70
+90
+15
+40
+10
+50
+30
+50
+20
+20
+40
+50
+20
+17
+20
+21
+
+
+
  - {"method":"checkout","params":["SSSZ"],"id":"CHK_R5_142"}, expected: 65, got: 21
  - {"method":"checkout","params":["ZZZS"],"id":"CHK_R5_144"}, expected: 65, got: 20
  - {"method":"checkout","params":["STXS"],"id":"CHK_R5_145"}, expected: 62, got: 17

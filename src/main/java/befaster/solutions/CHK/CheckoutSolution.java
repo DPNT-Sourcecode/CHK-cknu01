@@ -86,31 +86,6 @@ public class CheckoutSolution {
         int valOTotal = valO * numberO;
         int valWTotal = valW * numberW;
 
-        // Z > Y, S, T > X (last to be taken into account)
-        // There might be a formula for this
-        // Equivalent of adding up all and dividing by three
-
-        int discountedX = numberX / 3;
-        int remainingX = numberX - discountedX * 3;
-
-        int discountedZ = numberZ / 3;
-        int remainingZ = numberZ - discountedZ * 3;
-
-        int discountYST = (numberS + numberY + numberT) / 3;
-        int remainingYST = (numberS + numberY + numberT) - discountYST * 3;
-
-        int discountedGroup = (discountYST + discountedX + discountedZ) * 45;
-        int remainingGroup = remainingYST + remainingX + remainingZ;
-        int discountedRemaining = remainingGroup / 3;
-        int finalRemaining = remainingGroup - discountedRemaining * 3;
-
-        int sumTotalGroup;
-        if(remainingYST + remainingX + remainingZ < 3 && remainingYST + remainingX + remainingZ > 0) {
-            sumTotalGroup = remainingYST * 20 + remainingZ * 21 + remainingX * 17;
-        } else {
-            sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
-        }
-
         // Meh rules
         int valHTotal = 0;
         int valKTotal = 0;
@@ -196,6 +171,52 @@ public class CheckoutSolution {
             valUTotal = valUTotal - discountedU * 40;
         } else {
             valUTotal = numberU * 40;
+        }
+
+        // Z > Y, S, T > X (last to be taken into account)
+        // There might be a formula for this
+        // Equivalent of adding up all and dividing by three
+        // Previous approach was bad. We can do better
+
+
+        skus.replaceAll("A", "");
+        skus.replace('B', ' ');
+        skus.replace('C', ' ');
+        skus.replace('D', ' ');
+        skus.replace('E', ' ');
+        skus.replace('F', ' ');
+        skus.replace('G', ' ');
+        skus.replace('H', ' ');
+        skus.replace('I', ' ');
+        skus.replace('J', ' ');
+        skus.replace('K', ' ');
+        skus.replace('L', ' ');
+        skus.replace('M', ' ');
+        skus.replace('N', ' ');
+        skus.replace('O', ' ');
+        skus.replace('P', ' ');
+        skus.replace('Q', ' ');
+
+
+        int discountedX = numberX / 3;
+        int remainingX = numberX - discountedX * 3;
+
+        int discountedZ = numberZ / 3;
+        int remainingZ = numberZ - discountedZ * 3;
+
+        int discountYST = (numberS + numberY + numberT) / 3;
+        int remainingYST = (numberS + numberY + numberT) - discountYST * 3;
+
+        int discountedGroup = (discountYST + discountedX + discountedZ) * 45;
+        int remainingGroup = remainingYST + remainingX + remainingZ;
+        int discountedRemaining = remainingGroup / 3;
+        int finalRemaining = remainingGroup - discountedRemaining * 3;
+
+        int sumTotalGroup;
+        if(remainingYST + remainingX + remainingZ < 3 && remainingYST + remainingX + remainingZ > 0) {
+            sumTotalGroup = remainingYST * 20 + remainingZ * 21 + remainingX * 17;
+        } else {
+            sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
         }
 
         result =
