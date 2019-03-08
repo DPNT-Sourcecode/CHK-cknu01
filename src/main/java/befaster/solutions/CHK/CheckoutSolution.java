@@ -2,9 +2,7 @@ package befaster.solutions.CHK;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
@@ -212,8 +210,25 @@ public class CheckoutSolution {
             characters.add(c);
         }
 
-        Map<Character, Integer>
+        Map<Character, Integer> mapOfValues = new HashMap<>();
+        mapOfValues.put("S".charAt(0), 20);
+        mapOfValues.put("T".charAt(0), 20);
+        mapOfValues.put("X".charAt(0), 17);
+        mapOfValues.put("Y".charAt(0), 20);
+        mapOfValues.put("Z".charAt(0), 21);
 
+        int discounted = characters.size() / 3;
+        int remaining = characters.size() - discounted * 3;
+        List<Character> finalCharacters = characters.subList(0, remaining);
+
+        int valueFinalCharacters = 0;
+        for(char c : finalCharacters) {
+            valueFinalCharacters += mapOfValues.get(c);
+        }
+
+        System.out.println(discounted * 45);
+        System.out.println(valueFinalCharacters);
+        System.out.println(discounted * 45 + valueFinalCharacters);
 
         result =
                 valATotal +
@@ -236,7 +251,7 @@ public class CheckoutSolution {
                         valRTotal +
                         valUTotal +
                         valVTotal +
-                        valWTotal;
+                        valWTotal + discounted * 45 + valueFinalCharacters;
 
         return result;
     }
@@ -271,8 +286,9 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("SABCDEEFFZSSSZ"));
+        System.out.println(checkoutSolution.checkout("SSSZ"));
     }
 }
+
 
 
