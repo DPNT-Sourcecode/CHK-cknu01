@@ -286,9 +286,10 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("SSSZ"));
+        System.out.println(checkoutSolution.checkout("STXZ"));
     }
 }
+
 
 
 
