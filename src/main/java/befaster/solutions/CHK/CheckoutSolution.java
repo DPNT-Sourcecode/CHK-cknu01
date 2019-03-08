@@ -212,7 +212,7 @@ public class CheckoutSolution {
             characters.add(c);
         }
 
-        System.out.println(characters);
+        Map<Character, Integer>
 
 
         result =
@@ -274,4 +274,5 @@ public class CheckoutSolution {
         System.out.println(checkoutSolution.checkout("SABCDEEFFZSSSZ"));
     }
 }
+
 
