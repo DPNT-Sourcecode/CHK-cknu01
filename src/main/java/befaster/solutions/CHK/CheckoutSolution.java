@@ -2,6 +2,10 @@ package befaster.solutions.CHK;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class CheckoutSolution {
     public Integer checkout(String skus) {
 
@@ -11,12 +15,10 @@ public class CheckoutSolution {
         if (skus == null || skus.equals("-")) {
             return -1;
         }
-
         // Check 2
         if (skus.isEmpty()) {
             return 0;
         }
-
         // Sanity 1
         for (int i = 0; i < skus.length(); i++) {
             if (Character.isLowerCase(skus.charAt(i))) {
@@ -24,12 +26,12 @@ public class CheckoutSolution {
                 break;
             }
         }
-
         // Sanity 2
         if (result == -1) {
             return result;
         }
 
+        // TODO Refactor this
         int valC = 20;
         int valD = 15;
         int valG = 20;
@@ -173,51 +175,45 @@ public class CheckoutSolution {
             valUTotal = numberU * 40;
         }
 
-        // Z > Y, S, T > X (last to be taken into account)
-        // There might be a formula for this
-        // Equivalent of adding up all and dividing by three
-        // Previous approach was bad. We can do better
+        /* Z > Y, S, T > X (last to be taken into account)
+         There might be a formula for this
+         Equivalent of adding up all and dividing by three
+         Previous approach was bad. We can do better
+        */
 
+        skus = skus.replace("A", "");
+        skus = skus.replace("B", "");
+        skus = skus.replace("C", "");
+        skus = skus.replace("D", "");
+        skus = skus.replace("E", "");
+        skus = skus.replace("F", "");
+        skus = skus.replace("G", "");
+        skus = skus.replace("H", "");
+        skus = skus.replace("I", "");
+        skus = skus.replace("J", "");
+        skus = skus.replace("K", "");
+        skus = skus.replace("L", "");
+        skus = skus.replace("M", "");
+        skus = skus.replace("N", "");
+        skus = skus.replace("O", "");
+        skus = skus.replace("P", "");
+        skus = skus.replace("Q", "");
+        skus = skus.replace("R", "");
+        skus = skus.replace("U", "");
+        skus = skus.replace("V", "");
+        skus = skus.replace("W", "");
 
-        skus.replaceAll("A", "");
-        skus.replace('B', ' ');
-        skus.replace('C', ' ');
-        skus.replace('D', ' ');
-        skus.replace('E', ' ');
-        skus.replace('F', ' ');
-        skus.replace('G', ' ');
-        skus.replace('H', ' ');
-        skus.replace('I', ' ');
-        skus.replace('J', ' ');
-        skus.replace('K', ' ');
-        skus.replace('L', ' ');
-        skus.replace('M', ' ');
-        skus.replace('N', ' ');
-        skus.replace('O', ' ');
-        skus.replace('P', ' ');
-        skus.replace('Q', ' ');
+        char[] arrayOfSTXYZ = skus.toCharArray();
+        List<Character> characters = new ArrayList<>();
 
+        Arrays.sort(arrayOfSTXYZ);
 
-        int discountedX = numberX / 3;
-        int remainingX = numberX - discountedX * 3;
-
-        int discountedZ = numberZ / 3;
-        int remainingZ = numberZ - discountedZ * 3;
-
-        int discountYST = (numberS + numberY + numberT) / 3;
-        int remainingYST = (numberS + numberY + numberT) - discountYST * 3;
-
-        int discountedGroup = (discountYST + discountedX + discountedZ) * 45;
-        int remainingGroup = remainingYST + remainingX + remainingZ;
-        int discountedRemaining = remainingGroup / 3;
-        int finalRemaining = remainingGroup - discountedRemaining * 3;
-
-        int sumTotalGroup;
-        if(remainingYST + remainingX + remainingZ < 3 && remainingYST + remainingX + remainingZ > 0) {
-            sumTotalGroup = remainingYST * 20 + remainingZ * 21 + remainingX * 17;
-        } else {
-            sumTotalGroup = discountedGroup + discountedRemaining * 45 + finalRemaining * 17;
+        for(char c : arrayOfSTXYZ) {
+            characters.add(c);
         }
+
+        System.out.println(characters);
+
 
         result =
                 valATotal +
@@ -240,8 +236,7 @@ public class CheckoutSolution {
                         valRTotal +
                         valUTotal +
                         valVTotal +
-                        valWTotal +
-                        sumTotalGroup;
+                        valWTotal;
 
         return result;
     }
@@ -276,6 +271,7 @@ public class CheckoutSolution {
 
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
-        System.out.println(checkoutSolution.checkout("SSSZ"));
+        System.out.println(checkoutSolution.checkout("SABCDEEFFZSSSZ"));
     }
 }
+
