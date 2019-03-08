@@ -202,13 +202,17 @@ public class CheckoutSolution {
         skus = skus.replace("W", "");
 
         char[] arrayOfSTXYZ = skus.toCharArray();
-        List<Character> characters = new ArrayList<>();
+        ArrayList<Character> characters = new ArrayList<>();
 
+        // Need something like XXXXX...STY...ZZZZZZ
         Arrays.sort(arrayOfSTXYZ);
 
         for(char c : arrayOfSTXYZ) {
             characters.add(c);
         }
+
+        characters.sort(new ValueComparator());
+        System.out.println(characters);
 
         Map<Character, Integer> mapOfValues = new HashMap<>();
         mapOfValues.put("S".charAt(0), 20);
@@ -284,8 +288,22 @@ public class CheckoutSolution {
         return valDiscounted + valNotDiscounted;
     }
 
+    class ValueComparator implements Comparator<Character> {
+
+        @Override
+        public int compare(Character o1, Character o2) {
+            if(o1 == 'X') {
+                return -1;
+            } else if (o1 == 'Z')
+                return 1;
+            else
+                return 0;
+        }
+    }
+
     public static void main(String[] args) {
         CheckoutSolution checkoutSolution = new CheckoutSolution();
         System.out.println(checkoutSolution.checkout("STXZ"));
     }
 }
+
